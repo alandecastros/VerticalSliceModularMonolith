@@ -1,0 +1,21 @@
+query USUARIOS_DATA_TABLE(
+  $where: UsuarioModelFilterInput
+  $order: [UsuarioModelSortInput!]
+  $skip: Int
+  $take: Int
+) {
+  result: usuariosOffset(
+    where: $where
+    order: $order
+    skip: $skip
+    take: $take
+  ) {
+    items {
+      codigo      
+      nome
+      dataCriacao
+      dataCriacaoText
+    }
+    totalCount
+  }
+}

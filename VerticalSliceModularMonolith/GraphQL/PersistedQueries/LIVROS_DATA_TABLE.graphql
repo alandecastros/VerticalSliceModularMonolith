@@ -1,0 +1,21 @@
+query LIVROS_DATA_TABLE(
+  $where: LivroModelFilterInput
+  $order: [LivroModelSortInput!]
+  $skip: Int
+  $take: Int
+) {
+  result: livrosOffset(
+    where: $where
+    order: $order
+    skip: $skip
+    take: $take
+  ) {
+    items {
+      codigo      
+      titulo
+      dataCriacao
+      dataCriacaoText
+    }
+    totalCount
+  }
+}
